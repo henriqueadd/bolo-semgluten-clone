@@ -1,0 +1,506 @@
+<!DOCTYPE html><html lang="pt"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Receitas de bolo saudáveis e deliciosas para todos os amante de bolo. Sem glúten, sem culpa. Apenas R$10.">
+  <title>Receitas de Bolo</title><script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());  </script>
+
+  <!-- Preload das fontes -->
+  <link rel="preload" href="fonts/asap-condensed-headline-subset.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/raleway-regular-subset.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/raleway-bold-subset.woff2" as="font" type="font/woff2" crossorigin="">
+
+  <!-- Preload da imagem hero -->
+  <link rel="preload" as="image" href="images/hero-mobile2.avif" type="image/avif" fetchpriority="high">
+
+  <!-- CSS crítico inline — seções 1–3 (hero, benefits, cakes) -->
+  <style>
+    /* ─── Fontes locais ─── */
+    @font-face {
+      font-family: 'Asap Condensed';
+      src: url('fonts/asap-condensed-headline-subset.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 400 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Raleway';
+      src: url('fonts/raleway-regular-subset.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 300 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Raleway';
+      src: url('fonts/raleway-bold-subset.woff2') format('woff2');
+      font-display: swap;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* ─── Variáveis de design ─── */
+    :root {
+      --cor-laranja: #ec6300;
+      --cor-vermelho: #e2211c;
+      --cor-barra-titulo: #f5941f;
+      --cor-subtitulo-bg: #682e28;
+      --cor-branco: #ffffff;
+      --cor-fundo: #ffffff;
+
+      --fonte-titulo: 'Asap Condensed', 'Arial Narrow', Arial, sans-serif;
+      --fonte-corpo: 'Raleway', Arial, sans-serif;
+
+      --tam-hero-titulo: 2.9375rem;
+      --tam-hero-tagline: 2.6875rem;
+      --tam-subtitulo: 1.125rem;
+      --tam-badge: 1.1rem;
+
+      --altura-hero: 36.25rem;
+      --largura-conteudo: 21rem;
+      --hero-padding-top: 3.8125rem;
+    }
+
+    /* ─── Reset mínimo ─── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--fonte-corpo);
+      background-color: var(--cor-fundo);
+    }
+
+    /* ══════════════════════════════════════════
+       SEÇÃO 1 — HERO
+    ══════════════════════════════════════════ */
+
+    .section-hero {
+      position: relative;
+      height: var(--altura-hero);
+      background-image: url('images/hero-mobile2.jpg');
+      background-image: image-set(url('images/hero-mobile2.avif') type('image/avif'), url('images/hero-mobile2.webp') type('image/webp'), url('images/hero-mobile2.jpg') type('image/jpeg'));
+      background-size: cover;
+      background-position: center 55%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: var(--hero-padding-top);
+      overflow: hidden;
+    }
+
+    .badge-container {
+      position: absolute;
+      top: 0.9375rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--cor-vermelho);
+      border-radius: 0.5rem;
+      padding: 0.125rem 0.875rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    .badge-text {
+      color: var(--cor-branco);
+      font-family: var(--fonte-corpo);
+      font-size: var(--tam-badge);
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+
+    .hero-main {
+      width: var(--largura-conteudo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-title-wrapper {
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+
+    @keyframes title-hl-slide {
+      from { background-size: 0% 100%; }
+      to   { background-size: 100% 100%; }
+    }
+
+    .title-hl {
+      display: inline;
+      background-image: linear-gradient(#f5941f, #f5941f);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 0% 100%;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: calc(0.1em - 5px) 0.3rem 0.1em;
+      color: rgb(255, 252, 251);
+      animation: title-hl-slide 0.5s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
+    }
+
+    .hero-title {
+      position: relative;
+      z-index: 2;
+      font-family: var(--fonte-titulo);
+      font-size: var(--tam-hero-titulo);
+      font-weight: 700;
+      line-height: 0.96; /* -2px: era ~47px, agora ~45px */
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--fonte-titulo);
+      font-size: var(--tam-hero-tagline);
+      font-weight: 700;
+      color: var(--cor-laranja);
+      line-height: 1;
+      margin-top: 0.5625rem;
+      text-align: center;
+    }
+
+    .hero-subtitle-box {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      margin-top: 2.1875rem;
+      width: 21rem;
+    }
+
+    .hero-subtitle {
+      color: #3b1f0a;
+      font-family: var(--fonte-corpo);
+      font-size: 1.3125rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       SEÇÃO 2 — BENEFITS CARD
+    ══════════════════════════════════════════ */
+
+    .section-benefits {
+      background: linear-gradient(to bottom, #fafafa, #ffffff);
+      display: flex;
+      justify-content: center;
+      padding-bottom: 0.625rem;
+    }
+
+    .benefits-card {
+      width: calc(100% - 1.5rem);
+      background: #ffffff;
+      border-radius: 0.75rem;
+      border: 0.0625rem solid #eaeaea;
+      box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.14);
+      margin-top: -6.4rem;
+      position: relative;
+      z-index: 5;
+      transform: translateY(2.1875rem);
+      padding: 0.625rem 1.25rem;
+    }
+
+    .benefits-list {
+      list-style: none;
+    }
+
+    .benefits-item {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.21875rem 0;
+      font-family: var(--fonte-corpo);
+      font-size: 1.0625rem;
+      font-style: italic;
+      color: #000;
+    }
+
+    .benefits-item+.benefits-item {
+      border-top: none;
+    }
+
+    .benefits-icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════
+       SEÇÃO 3 — CAKE PHOTO DUO
+    ══════════════════════════════════════════ */
+
+    .section-cakes {
+      height: 12.5rem;
+      background-image: url('images/cake_video.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .final-cta-heading { font-size: 1.875rem !important; /* 30px = 28+2 */ }
+    .final-cta-access { font-size: 0.9375rem !important; /* 15px = 18-3 */ margin-top: 0.875rem !important; /* 14px = 12+2 */ }
+  </style>
+
+  <!-- CSS não-crítico — seções 4–15 -->
+  <link rel="stylesheet" href="css/style.css">
+
+    <!-- Facebook Pixel -->
+    <!-- PLACEHOLDER_FOR_USER_PIXEL -->
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 1 — HERO
+  ══════════════════════════════════════════ -->
+  <section class="section-hero">
+    <div class="badge-container">
+      <p class="badge-text">Sem Glúten</p>
+    </div>
+    <div class="hero-main">
+      <div class="hero-title-wrapper">
+        <h1 class="hero-title">
+          <span class="title-hl">Receitas de Bolo</span><br>
+          <span class="title-hl">para comer</span>
+        </h1>
+      </div>
+      <p class="hero-tagline">Sem Culpa</p>
+      <div class="hero-subtitle-box">
+        <p class="hero-subtitle">Agora a família toda<br>pode comer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 2 — BENEFITS CARD
+  ══════════════════════════════════════════ -->
+  <section class="section-benefits">
+    <div class="benefits-card">
+      <ul class="benefits-list">
+        <li class="benefits-item">
+          <img src="images/imgi_1_icon_d0e7fd57d573b44cb024e410f876787e0392a41d.svg" alt="" class="benefits-icon">
+          <span><b>Resultado garantido</b> na primeira tentativa</span>
+        </li>
+        <li class="benefits-item">
+          <img src="images/imgi_1_icon_d0e7fd57d573b44cb024e410f876787e0392a41d.svg" alt="" class="benefits-icon">
+          <span><b>Sem açúcar</b> e <b>Sem Lactose</b></span>
+        </li>
+        <li class="benefits-item">
+          <img src="images/imgi_1_icon_d0e7fd57d573b44cb024e410f876787e0392a41d.svg" alt="" class="benefits-icon">
+          <span><b>Ingredientes</b> do mercado de bairro</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 3 — CAKE PHOTO DUO
+  ══════════════════════════════════════════ -->
+  <div class="section-cakes" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 4 — PRODUTO
+  ══════════════════════════════════════════ -->
+  <section class="section-product">
+    <h2 class="product-title">Apresento o<br>Livro de receitas <b>Bolos Sem Glúten</b></h2>
+    <div class="product-box-wrapper">
+      <picture>
+        <img src="images/mockup.webp" class="product-mockup" alt="Livro de receitas Bolos Sem Glúten" width="743" height="936" loading="lazy">
+      </picture>
+      <div class="product-box">
+        <p class="pb6-desc">Você receberá <b>10 receitas inéditas</b> com foto real e passo a passo simples.</p>
+        <ul class="pb6-list">
+          <li><img src="images/imgi_24_CapturadeTela20241210as215415.png" alt="" class="ingredient-icon" loading="lazy"><span><b>Sem Glúten</b></span></li>
+          <li><img src="images/imgi_23_CapturadeTela20241210as215424.png" alt="" class="ingredient-icon" loading="lazy"><span><b>Sem Leite</b></span></li>
+          <li><img src="images/imgi_22_CapturadeTela20241210as215436.png" alt="" class="ingredient-icon" loading="lazy"><span><b>Sem Conservantes</b></span></li>
+          <li><img src="images/imgi_20_image.png" alt="" class="ingredient-icon" loading="lazy"><span>Com ou <b>Sem
+                açúcar</b></span></li>
+          <li><img src="images/imgi_21_CapturadeTela20241210as215458.png" alt="" class="ingredient-icon" loading="lazy"><span>Com ou <b>Sem ovos</b></span></li>
+        </ul>
+      </div>
+    </div>
+    <a href="https://pay.cakto.com.br/wgq6awx_909320" class="btn-cta" rel="noopener noreferrer">BAIXAR MINHA CÓPIA</a>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 5 — AUTHOR INTRO
+  ══════════════════════════════════════════ -->
+  <div class="section-author-intro">
+    <p class="author-ig-text">
+      Receitas assinadas por <i>Lara Vencato,</i><br>
+      criadora do
+      <img src="images/imgi_26_download.jpg" alt="Instagram" class="author-ig-logo-inline" loading="lazy"><strong>sua.cozinhasaudavel</strong>
+      <img src="images/imgi_27_download.png" alt="" class="author-ig-check" loading="lazy">
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 6 — INSTAGRAM
+  ══════════════════════════════════════════ -->
+  <section class="section-instagram">
+    <img src="images/instagram.webp" alt="Perfil Instagram @sua.cozinhasaudavel com 344 mil seguidores" class="instagram-screenshot" loading="lazy">
+    <h2 class="instagram-heading">Veja os comentários<br>no post fixado</h2>
+    <p class="instagram-subtext">Mais de <b class="instagram-highlight">500 comentários</b><br>de clientes
+      satisfeitos.</p>
+    <picture style="display:block;width:100%">
+      <source srcset="images/imgi_28_1_opt.avif" type="image/avif">
+      <img src="images/bolo1.webp" alt="" class="photo-full">
+    </picture>
+    <picture style="display:block;width:100%">
+      <source srcset="images/imgi_29_2_opt.avif" type="image/avif">
+      <img src="images/bolo2.webp" alt="" class="photo-full">
+    </picture>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 9 — ENTREGA
+  ══════════════════════════════════════════ -->
+  <section class="section-delivery">
+    <h2 class="delivery-heading">E como vou receber?</h2>
+    <div class="delivery-box" style="padding:10px 24px;width:fit-content;max-width:100%">
+      <p class="delivery-text" style="line-height:21px;font-size:17px">
+        <b>Receba instantaneamente</b><br>
+        por <span style="font-size:1.6em;vertical-align:middle">📧</span> e-mail após o pagamento.<br>
+        <b>Zero espera!</b>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 10 — FAQ
+  ══════════════════════════════════════════ -->
+  <section class="section-faq">
+    <p class="faq-emoji">💬</p>
+    <h2 class="faq-heading">Sempre me perguntam...</h2>
+
+    <div class="faq-card">
+      <div class="faq-question">Lara, os ingredientes são caros?</div>
+      <div class="faq-answer"><b>Não!</b> Usamos ingredientes simples que você já tem em casa.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">O bolo realmente fica gostoso e fofinho?</div>
+      <div class="faq-answer"><b>Sim!</b> Fica igual bolo normal. Fofo, gostoso, molhadinho e não esfarela.
+        Ninguém percebe que não tem glúten</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">Eu preciso ser experiente na cozinha?</div>
+      <div class="faq-answer"><b>Não!</b> São receitas para todos os níveis, com um passo a passo super simples.
+      </div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">O e-book chega mesmo depois do pagamento?</div>
+      <div class="faq-answer"><b>Sim!</b> Você recebe na hora no seu e-mail e no WhatsApp. É tudo automático.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 11 — GARANTIA
+  ══════════════════════════════════════════ -->
+  <section class="section-guarantee">
+    <h2 class="guarantee-heading">Experimente</h2>
+    <p class="guarantee-subheading">Sem Riscos</p>
+    <div class="guarantee-box">
+      <img src="images/imgi_30_bf89eb8a_garantia_7_dia_3_1041041000000000000028.png" alt="Garantia 7 dias" class="guarantee-badge" loading="lazy">
+      <p class="guarantee-text">Satisfação garantida ou seu<br>dinheiro de volta. Você tem até<br>7 dias para
+        solicitar a devolução<br>do valor pago pelo produto.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 12 — CABEÇALHO DA AUTORA
+  ══════════════════════════════════════════ -->
+  <div class="section-author-header">
+    <p class="author-header-label">Sobre a Autora,</p>
+    <p class="author-header-name">Lara Vencato</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 13 — BIO DA AUTORA
+  ══════════════════════════════════════════ -->
+  <section class="section-author-bio">
+    <div class="author-bio-box">
+      <p class="author-bio-text">A intolerância ao glúten me ensinou a cuidar da minha saúde. <b>Quando minha
+          filha nasceu com o mesmo diagnóstico, cozinhar deixou de ser uma opção <span class="author-bio-emphasis">— virou missão.</span></b></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 14 — CTA FINAL
+  ══════════════════════════════════════════ -->
+  <section class="section-final-cta">
+    <div class="final-cta-divider" aria-hidden="true"></div>
+    <h2 class="final-cta-heading">
+      <b>Bolo Simples, Fofinho,</b><br>
+      <b class="final-cta-red">Rápido e prático</b>
+    </h2>
+    <a href="https://pay.cakto.com.br/wgq6awx_909320" class="btn-cta btn-cta-final" rel="noopener noreferrer">BAIXAR MINHA CÓPIA</a>
+    <p class="final-cta-access">
+      O café da tarde vai subir de nível!
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SEÇÃO 15 — RODAPÉ
+  ══════════════════════════════════════════ -->
+  <footer class="section-footer">
+    <p class="footer-text">Copyright © 2021 Todos os direitos Reservados</p>
+  </footer>
+
+  <!-- Ideia 13 — Slide-up na bio da autora -->
+  <script>
+    (function(){
+      var bio = document.querySelector('.author-bio-box');
+      if(!bio) return;
+      var io3 = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){
+          entries[0].target.classList.add('animate-in');
+          io3.unobserve(entries[0].target);
+        }
+      }, { threshold: 0.3 });
+      io3.observe(bio);
+    })();
+  </script>
+
+  <script>
+  (function(){
+    var variant = (document.cookie.match(/ab_variant=(control|challenger)/) || [])[1] || 'control';    // Rastreia visita única por sessão (sessionStorage limpa ao fechar a aba)
+    var visitKey = 'ab_visit_' + variant;
+    if (!sessionStorage.getItem(visitKey)) {
+      navigator.sendBeacon('/api/ab-track?type=visit&variant=' + variant);
+      sessionStorage.setItem(visitKey, '1');
+    }
+    // Injeta ?ab_variant nos links do checkout para rastrear a variante na página de obrigado
+    document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function(a) {
+      try {
+        var url = new URL(a.href);
+        url.searchParams.set('ab_variant', variant);
+        url.searchParams.set('utm_content', variant);
+        a.href = url.toString();
+      } catch(e) {}
+    });
+    // Rastreia cliques em todos os botões CTA (querySelectorAll = mais robusto)
+    document.querySelectorAll('a.btn-cta').forEach(function(a) {
+      a.addEventListener('click', function() {
+        try { gtag('event', 'click_botao_cta', { page_version: variant }); } catch(e) {}
+        navigator.sendBeacon('/api/ab-track?type=click&variant=' + variant);
+      });
+    });
+  })();
+  </script>
+
+
+
+
+</body></html>

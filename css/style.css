@@ -1,0 +1,1559 @@
+/* ══════════════════════════════════════════
+   SEÇÃO 4 — PRODUTO
+══════════════════════════════════════════ */
+
+.section-product {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.875rem 1.25rem 0rem;
+}
+
+.product-title {
+  font-family: var(--fonte-corpo);
+  font-size: 2.125rem;
+  /* 34px */
+  font-weight: 400;
+  color: #713a3a;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.product-box-wrapper {
+  width: 16.5rem;
+  /* 264px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Ideia 6 — Float suave no mockup do e-book */
+@keyframes mockup-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.product-mockup {
+  width: 8.8125rem;
+  /* 141px — tamanho original do Klickpages */
+  height: auto;
+  display: block;
+  margin-bottom: -4.5rem;
+  /* -72px — sobrepõe a caixa */
+  position: relative;
+  z-index: 2;
+  /* Ideia 6 — flutua levemente, como um livro digital vivo */
+  animation: mockup-float 3s ease-in-out infinite;
+}
+
+.product-box {
+  width: 100%;
+  border: 0.125rem dashed #f5941f;
+  border-radius: 0.625rem;
+  /* 10px */
+  padding: 4.625rem 0.75rem 1rem;
+  /* 74px top — espaço para mockup */
+  background: #ffffff;
+  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.12);
+  /* sombra sutil do original */
+}
+
+.product-description {
+  font-family: var(--fonte-corpo);
+  font-size: 1.0625rem;
+  /* 17px */
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.ingredient-list {
+  list-style: none;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.375rem 0;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #333;
+}
+
+.ingredient-item+.ingredient-item {
+  border-top: none;
+}
+
+.ingredient-icon {
+  width: 2.1875rem;
+  /* 35px */
+  height: 2.1875rem;
+  flex-shrink: 0;
+}
+
+.ingredient-sub {
+  font-weight: 400;
+  color: #666;
+}
+
+.ingredient-note {
+  font-style: italic;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* Ideia 5 — Pulso sutil no botão CTA */
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 0.5625rem 1.4375rem rgba(0,0,0,0.18), 0 0 0 0 rgba(245,148,31,0); }
+  50%       { box-shadow: 0 0.5625rem 1.4375rem rgba(0,0,0,0.18), 0 0 0 7px rgba(245,148,31,0.22); }
+}
+
+/* Botão CTA — compartilhado pelas seções 4 e 14 */
+.btn-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18.75rem;
+  /* 300px */
+  height: 4.5625rem;
+  background-color: #ffd57f;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 24px 64px rgba(0, 0, 0, 0.2);
+  font-family: var(--fonte-corpo);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a1310;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem rgba(255, 255, 255, 0.27);
+  animation: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-cta:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ══════════════════════════════════════════
+   SHOWCASE: 10 designs do botão
+══════════════════════════════════════════ */
+
+.btn-showcase {
+  background: #ffffff;
+  border-top: 2px dashed #e0d8d0;
+  border-bottom: 2px dashed #e0d8d0;
+  padding: 1.75rem 1.25rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn-showcase-title {
+  font-family: var(--fonte-corpo);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #9a7a5a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.btn-showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-showcase-num {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: #c4955a;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-showcase-desc {
+  font-family: var(--fonte-corpo);
+  font-size: 0.78rem;
+  color: #9a7a5a;
+  text-align: center;
+  font-style: italic;
+  max-width: 17rem;
+}
+
+/* ─── V2: PILL MODERNO ───────────────────────
+   Border-radius 100px — cantos completamente
+   arredondados, sem borda inferior. Sombra suave
+   dá volume. Padrão: Stripe, Linear, Vercel. ──── */
+.btn-v2 {
+  border-radius: 100px;
+  border: none;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.22),
+    0 3px 8px rgba(245, 148, 31, 0.3);
+  animation: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-v2:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.28),
+    0 6px 14px rgba(245, 148, 31, 0.38);
+}
+
+/* ─── V3: 3D FÍSICO (KEYCAP) ────────────────
+   Sombra sólida 8px inferior cria volume real de
+   tecla. Afunda ao clicar com translateY.
+   Técnica skeuomórfica — alto CTR mobile. ──── */
+.btn-v3 {
+  border-radius: 10px;
+  border: none;
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 12px 22px rgba(0, 0, 0, 0.32);
+  animation: none;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-v3:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ── V3 SHADOW VARIANTS — linha sólida idêntica; só o blur muda ── */
+
+/* Sombra 2: Forte — blur mais denso e concentrado */
+.btn-v3b {
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 16px 40px rgba(0, 0, 0, 0.48);
+}
+
+.btn-v3b:active {
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 4px 14px rgba(0, 0, 0, 0.32);
+}
+
+/* Sombra 3: Suave — blur muito difuso, quase imperceptível */
+.btn-v3c {
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 10px 36px rgba(0, 0, 0, 0.1);
+}
+
+.btn-v3c:active {
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Sombra 4: Tom Âmbar — blur com tinte laranja/quente */
+.btn-v3d {
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 14px 32px rgba(160, 80, 0, 0.52);
+}
+
+.btn-v3d:active {
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 4px 12px rgba(160, 80, 0, 0.3);
+}
+
+/* Sombra 5: Ampla e Longa — espalhada, baixo contraste */
+.btn-v3e {
+  box-shadow:
+    0 8px 0 0 #9e6000,
+    0 24px 64px rgba(0, 0, 0, 0.2);
+}
+
+.btn-v3e:active {
+  box-shadow:
+    0 2px 0 0 #9e6000,
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── V4: OBLÍQUO / PARALELOGRAMO ──────────
+   clip-path cria formato diagonal de paralelogramo.
+   Transmite velocidade e ação. drop-shadow preserva
+   profundidade. Padrão: e-sports, fitness, gaming. ──── */
+.btn-v4 {
+  clip-path: polygon(16px 0%, 100% 0%, calc(100% - 16px) 100%, 0% 100%);
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 7px 18px rgba(0, 0, 0, 0.3));
+  animation: none;
+  width: 300px;
+  transition: filter 0.18s ease;
+}
+
+.btn-v4:hover {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+}
+
+/* ─── V5: CARIMBO / OFFSET ──────────────────
+   Sombra sólida deslocada 5px — efeito de carimbo
+   gráfico. Hover aumenta offset, click "carimba".
+   Design gráfico brasileiro — distinctivo no feed. ──── */
+.btn-v5 {
+  border-radius: 6px;
+  border: 2px solid #b86e00;
+  box-shadow: 5px 5px 0 0 #b86e00;
+  animation: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-v5:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 0 #b86e00;
+}
+
+.btn-v5:active {
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 0 #b86e00;
+}
+
+/* ─── V6: BORDA DUPLA ────────────────────────
+   Dois anéis de moldura laranja concêntricos via
+   box-shadow em camadas. Anel interno + gap +
+   anel externo. Visual de precisão e qualidade. ──── */
+.btn-v6 {
+  border-radius: 8px;
+  border: none;
+  box-shadow:
+    0 0 0 2.5px #c07010,
+    0 0 0 5.5px #ffd57f,
+    0 0 0 8px #c07010,
+    0 10px 24px rgba(0, 0, 0, 0.18);
+  animation: none;
+}
+
+/* ─── V7: CANTOS VIVOS (SHARP) ──────────────
+   Border-radius 0 — autoridade e confiança máxima.
+   Sombra diagonal dá dimensão. Brutalismo digital:
+   grande recall visual e CTR diferenciado. ──── */
+.btn-v7 {
+  border-radius: 0;
+  border: none;
+  box-shadow:
+    6px 6px 0 rgba(0, 0, 0, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.14);
+  animation: none;
+  letter-spacing: 2px;
+}
+
+/* ─── V8: SPLIT COM ÍCONE ───────────────────
+   Zona separada à direita com ícone ⬇ de download.
+   Hierarquia visual clara da ação. Pesquisa Nielsen
+   aponta +18-30% CTR em split buttons de e-commerce. ──── */
+.btn-v8 {
+  border-radius: 6px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  padding-right: calc(3.5rem + 1.5rem);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  animation: none;
+}
+
+.btn-v8::after {
+  content: '⬇';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3.5rem;
+  background: rgba(0, 0, 0, 0.11);
+  border-left: 1.5px solid rgba(0, 0, 0, 0.16);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── V9: FAIXA / RÓTULO ────────────────────
+   Bordas grossas apenas nas laterais (sem borda inf).
+   Visual de etiqueta ou rótulo de produto — raro e
+   distintivo. Letter-spacing amplo = autoridade. ──── */
+.btn-v9 {
+  border-radius: 2px;
+  border: none;
+  border-left: 5px solid #b86e00;
+  border-right: 5px solid #b86e00;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  animation: none;
+  letter-spacing: 2px;
+}
+
+/* ─── V10: PILL + BORDA GROSSA ──────────────
+   Pílula (border-radius: 100px) com borda completa
+   laranja 3px, sem sombra. Outline clean = confiança.
+   Estilo: SaaS premium, Notion, Figma. ──── */
+.btn-v10 {
+  border-radius: 100px;
+  border: 3px solid #b86e00;
+  box-shadow: none;
+  animation: none;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.btn-v10:hover {
+  box-shadow: 0 0 0 4px rgba(178, 110, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+/* ─── V11: RECESSED / PRESSIONADO ──────────
+   Inset shadows criam ilusão de botão afundado.
+   Gradiente top-dark reforça o relevo invertido.
+   Psicologia de affordance — "já pronto pra clicar". ──── */
+.btn-v11 {
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(to bottom, #f0b84e, #ffd57f 45%);
+  box-shadow:
+    inset 0 3px 7px rgba(0, 0, 0, 0.22),
+    inset 0 1px 3px rgba(0, 0, 0, 0.14),
+    0 1px 2px rgba(255, 255, 255, 0.55);
+  animation: none;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 5 — AUTHOR INTRO
+══════════════════════════════════════════ */
+
+.section-author-intro {
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: #fff;
+}
+
+.author-ig-logo-inline {
+  width: 1.125rem;
+  /* 18px — -2px */
+  height: 1.125rem;
+  vertical-align: middle;
+  margin-right: 0.125rem;
+}
+
+.author-ig-text {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  /* 16px */
+  color: #000;
+  line-height: 1.4;
+}
+
+.author-ig-check {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 6 — INSTAGRAM
+══════════════════════════════════════════ */
+
+.section-instagram {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 1.5rem;
+  text-align: center;
+}
+
+.instagram-screenshot {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  transform: translateX(15px) translateY(-5px);
+}
+
+.instagram-heading {
+  font-family: var(--fonte-corpo);
+  font-size: 2.125rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  margin-top: -1.5625rem; /* sobe 25px sobre a imagem (-45px + 20px) */
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.instagram-subtext {
+  font-family: var(--fonte-corpo);
+  font-size: 1.203rem;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  /* espaço abaixo antes da próxima seção */
+}
+
+.instagram-highlight {
+  color: #ff000b;
+  font-weight: 700;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÕES 7–8 — FOTOS PROVA SOCIAL
+══════════════════════════════════════════ */
+
+.section-photo {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.75rem;
+  /* 28px cada lado */
+  background: #ffffff;
+}
+
+.photo-full {
+  width: 100%;
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 9 — ENTREGA
+══════════════════════════════════════════ */
+
+.section-delivery {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.delivery-heading {
+  font-family: var(--fonte-corpo);
+  font-size: 1.75rem;
+  /* 28px */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.delivery-box {
+  width: 19.0625rem;
+  /* 305px */
+  background: #fbfbfb;
+  border: 2px solid #b0b0b0;
+  border-radius: 0.625rem;
+  padding: 1rem 1.25rem;
+}
+
+.delivery-text {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  /* 16px */
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.delivery-icon {
+  width: 1.6875rem;
+  /* 27px */
+  height: 1.6875rem;
+  vertical-align: middle;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 10 — FAQ
+══════════════════════════════════════════ */
+
+.section-faq {
+  background: #fffbf3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 2.5rem;
+}
+
+.faq-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.375rem;
+  line-height: 1;
+}
+
+.faq-heading {
+  font-family: var(--fonte-corpo);
+  /* Raleway, conforme original */
+  font-size: 1.875rem;
+  /* 30px */
+  font-weight: 700;
+  color: #9e542b;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.faq-card {
+  width: 19.375rem;
+  /* 310px */
+  border-radius: 0.625rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  background: #e8bd84;
+  min-height: 3.75rem;
+  /* 60px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-family: var(--fonte-corpo);
+  font-size: 1.1875rem;
+  /* 19px */
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.faq-answer {
+  background: #fff;
+  padding: 0.75rem 1rem;
+  color: #777;
+  font-family: var(--fonte-corpo);
+  font-size: 1.0625rem;
+  /* 17px */
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 11 — GARANTIA
+══════════════════════════════════════════ */
+
+.section-guarantee {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.guarantee-heading {
+  font-family: var(--fonte-corpo);
+  font-size: 1.875rem;
+  /* 30px */
+  font-weight: 300;
+  color: #000;
+}
+
+.guarantee-subheading {
+  font-family: var(--fonte-corpo);
+  font-size: 1.875rem;
+  /* 30px */
+  font-weight: 700;
+  color: #f2b200;
+  margin-bottom: 3rem;
+  /* espaço para badge sobreposto */
+}
+
+.guarantee-box {
+  width: 19rem;
+  /* 304px */
+  background: #fbfbfb;
+  border: 2px solid #b0b0b0;
+  border-radius: 0.625rem;
+  padding: 3.25rem 1.25rem 1.25rem;
+  /* 52px top para badge */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ideia 12 — Glow pulsante dourado no badge de garantia */
+@keyframes guarantee-glow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(242,178,0,0)); }
+  50%       { filter: drop-shadow(0 0 10px rgba(242,178,0,0.65)); }
+}
+
+.guarantee-badge {
+  position: absolute;
+  top: -2.75rem;
+  /* -44px — sobrepõe o box */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5.625rem;
+  /* 90px */
+  /* Ideia 12 — aura dourada pulsando como sinal de confiança */
+  animation: guarantee-glow 2.6s ease-in-out infinite;
+}
+
+.guarantee-text {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 12 — CABEÇALHO DA AUTORA
+══════════════════════════════════════════ */
+
+.section-author-header {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* centra texto horizontalmente */
+  justify-content: center;
+  padding: 1rem;
+  min-height: 5.9375rem;
+  /* 95px */
+}
+
+.author-header-label {
+  font-family: var(--fonte-corpo);
+  font-size: 1.875rem;
+  /* 30px */
+  font-weight: 300;
+  color: #1f1f1f;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.author-header-name {
+  font-family: var(--fonte-corpo);
+  font-size: 1.875rem;
+  /* 30px */
+  font-weight: 700;
+  color: #e43b2c;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 13 — BIO DA AUTORA
+══════════════════════════════════════════ */
+
+.section-author-bio {
+  min-height: 27.8125rem;
+  /* 445px */
+  background-image: url('../images/lara.avif');
+  background-size: cover;
+  background-position: 50% 100%;
+  display: flex;
+  align-items: flex-end;
+  /* caixa de texto no rodapé da foto */
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Ideia 13 — slide-up na caixa de bio ao entrar no viewport */
+.author-bio-box {
+  width: 19.6875rem;
+  /* 315px */
+  background: rgba(255, 255, 255, 0.97);
+  padding: 1.25rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.author-bio-box.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.author-bio-text {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  /* 16px */
+  color: rgba(0, 0, 0, 0.7);
+  font-style: italic;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.author-bio-emphasis {
+  color: #e43b2c;
+  /* vermelho — mesmo tom de "Lara Vencato" */
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 14 — CTA FINAL
+══════════════════════════════════════════ */
+
+.section-final-cta {
+  /* Ideia 14 — gradiente quente: fundo aquecido sinaliza momento da decisão */
+  background: linear-gradient(to bottom, #ffffff, #fff4e0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+}
+
+.final-cta-divider {
+  width: 4.0625rem;
+  /* 65px */
+  height: 0.1875rem;
+  /* 3px — linha decorativa */
+  background-color: #e43b2c;
+  margin-bottom: 1rem;
+}
+
+.final-cta-heading {
+  font-family: var(--fonte-corpo);
+  font-size: 1.3125rem;
+  /* 21px */
+  font-weight: 400;
+  color: #6e2d1a;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+}
+
+.final-cta-red {
+  color: #e2211c;
+  font-weight: 700;
+}
+
+.btn-cta-final {
+  width: 18.75rem;
+  /* 300px */
+  height: 4.0625rem;
+  /* 65px */
+}
+
+.final-cta-access {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  font-family: var(--fonte-corpo);
+  font-size: 1.125rem;
+  /* 18px */
+  color: #333;
+}
+
+.final-cta-icon {
+  width: 1.9375rem;
+  /* 31px */
+  height: 1.9375rem;
+}
+
+/* ══════════════════════════════════════════
+   SEÇÃO 15 — RODAPÉ
+══════════════════════════════════════════ */
+
+.section-footer {
+  background: #090909;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.1875rem;
+  /* 35px */
+  padding: 0.375rem 1rem;
+}
+
+.footer-text {
+  font-family: var(--fonte-corpo);
+  font-size: 0.75rem;
+  /* 12px */
+  color: rgba(255, 255, 255, 0.46);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   PRODUCT SHOWCASE — VARIAÇÕES TEMPORÁRIAS
+══════════════════════════════════════════ */
+
+.product-showcase {
+  background: #ffffff;
+  padding: 2.5rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  border-top: 2px dashed #e0c8b0;
+  border-bottom: 2px dashed #e0c8b0;
+}
+
+.product-showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.product-showcase-label {
+  font-family: var(--fonte-corpo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9e6000;
+  margin: 0 auto 0.875rem;
+  text-align: center;
+  background: #fff8ee;
+  border: 1px solid #e8c070;
+  padding: 0.25rem 1.125rem;
+  border-radius: 2rem;
+}
+
+/* — V2: Número em Destaque + Setas ——————— */
+
+.pb2-header {
+  font-family: var(--fonte-corpo);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #1a1310;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+}
+
+.pb2-num {
+  display: block;
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #f5941f;
+  line-height: 1;
+}
+
+.pb2-sub {
+  font-family: var(--fonte-corpo);
+  font-size: 0.875rem;
+  color: #888;
+  text-align: center;
+  display: block;
+  margin-bottom: 0.875rem;
+  font-style: italic;
+}
+
+.pb2-list {
+  list-style: none;
+  border-top: 1px solid #f0e0cc;
+  padding-top: 0.75rem;
+}
+
+.pb2-list li {
+  font-family: var(--fonte-corpo);
+  font-size: 0.9375rem;
+  color: #333;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pb2-list li::before {
+  content: '→';
+  color: #f5941f;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pb2-list li em {
+  font-style: italic;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* — V3: Checklist ✓ com Separadores ———————— */
+
+.pb3-desc {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.45;
+  margin-bottom: 0.875rem;
+}
+
+.pb3-list {
+  list-style: none;
+  border-top: 1px solid #f0e0cc;
+  padding-top: 0.25rem;
+}
+
+.pb3-list li {
+  font-family: var(--fonte-corpo);
+  font-size: 0.9375rem;
+  color: #1a1310;
+  padding: 0.375rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-bottom: 1px solid #f8ede0;
+}
+
+.pb3-list li:last-child {
+  border-bottom: none;
+}
+
+.pb3-list li::before {
+  content: '✓';
+  color: #f5941f;
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 1rem;
+}
+
+.pb3-list li em {
+  font-weight: 400;
+  font-style: italic;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* — V4: Texto Editorial (parágrafo único) —— */
+
+.pb4-block {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.pb4-block + .pb4-block {
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0e0cc;
+}
+
+.pb4-block:last-child {
+  margin-bottom: 0;
+}
+
+.pb4-block b {
+  color: #1a1310;
+  font-weight: 700;
+}
+
+.pb4-block em {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9375rem;
+}
+
+/* — V5: Linhas com Marcador Lateral ————————— */
+
+.pb5-desc {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.4;
+  padding-bottom: 0.875rem;
+  margin-bottom: 0;
+  border-bottom: 2px solid #f5941f;
+}
+
+.pb5-list {
+  list-style: none;
+}
+
+.pb5-list li {
+  font-family: var(--fonte-corpo);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1310;
+  padding: 0.4375rem 0 0.4375rem 1rem;
+  border-bottom: 1px solid #f0e0cc;
+  position: relative;
+  line-height: 1.3;
+}
+
+.pb5-list li:last-child {
+  border-bottom: none;
+}
+
+.pb5-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.25rem;
+  height: 0.9375rem;
+  background: #f5941f;
+  border-radius: 2px;
+}
+
+.pb5-list li em {
+  font-weight: 400;
+  font-style: normal;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* — V6: Linhas Estruturadas + Ícones Originais —— */
+
+.pb6-desc {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.4;
+  padding-bottom: 0.875rem;
+  margin-bottom: 0;
+  border-bottom: 2px solid #f5941f;
+}
+
+.pb6-list {
+  list-style: none;
+}
+
+.pb6-list li {
+  font-family: var(--fonte-corpo);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #1a1310;
+  padding: 0.375rem 0;
+  border-bottom: 1px solid #f0e0cc;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  line-height: 1.3;
+}
+
+.pb6-list li:last-child {
+  border-bottom: none;
+}
+
+.pb6-list .ingredient-icon {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  flex-shrink: 0;
+}
+
+.pb6-list li em {
+  font-weight: 400;
+  font-style: normal;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* ── Seções 7–8 — Janela Interativa ── */
+.section-photo-v2 {
+  background: #ffffff;
+  padding: 0 5px;
+  margin-top: -20px;
+}
+
+.photos-window {
+  position: relative;
+  height: 21.875rem; /* 350px */
+  border-radius: 0.875rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07);
+}
+
+.photos-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.comment-img {
+  width: 100%;
+  display: block;
+}
+
+/* Gradiente inferior: 1/3 da janela — efeito "surgindo do infinito" */
+.photos-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 33.333%;
+  background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Sem barra de rolagem */
+.photos-window::-webkit-scrollbar {
+  display: none;
+}
+
+/* ══════════════════════════════════════════
+   FAQ SHOWCASE — REMOVER APÓS ESCOLHA
+══════════════════════════════════════════ */
+
+/* ── V1b: WhatsApp Invertido ──────────────── */
+
+/* Fundo igual ao chat do WhatsApp */
+.faq-s1b {
+  background: #efe7de !important;
+  padding: 1.5rem 0 2rem;
+}
+.faq-s1b .faq-emoji,
+.faq-s1b .faq-heading {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.faq-v1b {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+}
+
+.faq-v1b-bubble {
+  max-width: 78%;
+  padding: 6px 9px 7px;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  line-height: 1.45;
+  position: relative;
+}
+
+/* ── Cliente: DIREITA, verde WhatsApp ─────── */
+.faq-v1b-client {
+  background: #d9f7be;
+  color: #111;
+  align-self: flex-end;
+  border-radius: 7.5px 0 7.5px 7.5px;
+  margin-right: 10px;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+
+/* Cauda direita — triângulo fiel ao WhatsApp */
+.faq-v1b-client::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 8px;
+  height: 13px;
+  background: #d9f7be;
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  /* vértices: (0,0)=canto top-right da bolha | (0,13)=13px abaixo | (8,0)=ponta */
+}
+
+/* ── Lara: ESQUERDA, branco WhatsApp ─────── */
+.faq-v1b-lara {
+  background: #ffffff;
+  color: #111;
+  align-self: flex-start;
+  border-radius: 0 7.5px 7.5px 7.5px;
+  margin-left: 10px;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+
+/* Cauda esquerda — clip-path estilo WhatsApp */
+.faq-v1b-lara::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 8px;
+  height: 13px;
+  background: #ffffff;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  /* (8,0)=canto sup-esq do balão | (8,13)=13px abaixo | (0,0)=ponta da cauda */
+}
+
+.faq-v1b-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #b07a20;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+/* ══════════════════════════════════════════
+   DOBRAS 1–2 — ANTI-INFLAMATÓRIAS
+══════════════════════════════════════════ */
+
+/* Banner topo — promoção com atraso */
+@keyframes ai-banner-in {
+  from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+  to   { opacity: 1; max-height: 6rem; padding-top: 0.5rem; padding-bottom: 0.5rem; }
+}
+
+.ai-banner {
+  background-color: #cc1a0a;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  animation: ai-banner-in 0.5s ease-out 2.5s forwards;
+}
+
+.ai-banner-main {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.125rem;
+  line-height: 1.3;
+}
+
+.ai-banner-sub {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #ffe692;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Dobra 1 — Hero */
+.ai-section-hero {
+  background-color: #f7f3e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.75rem 1rem 1.75rem;
+  gap: 0.875rem;
+}
+
+.ai-hero-text {
+  text-align: center;
+  width: 100%;
+}
+
+.ai-hero-title {
+  font-family: 'Asap Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2.8125rem;
+  font-weight: 700;
+  color: #5a3800;
+  line-height: 1;
+  margin: 0 0 0.375rem;
+}
+
+.ai-hero-sub {
+  font-family: 'Asap Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.4375rem;
+  font-weight: 400;
+  color: #e82210;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ai-hero-sub b {
+  font-weight: 700;
+}
+
+/* Badges strip — linha horizontal única */
+.ai-badges-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 19.8125rem;
+  background: rgba(247, 243, 232, 0.9);
+  border: 0.125rem solid #dab27f;
+  border-radius: 0.5rem;
+  padding: 0.3125rem 0.75rem;
+  box-sizing: border-box;
+}
+
+.ai-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: #303030;
+  white-space: nowrap;
+}
+
+.ai-check-icon {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  flex-shrink: 0;
+}
+
+/* Hero image */
+.ai-hero-img {
+  width: 100%;
+  max-width: 19.8125rem;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* Features row — ícones + labels */
+.ai-features-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.ai-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+.ai-feature-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.ai-feature-item span {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #303030;
+  text-align: center;
+}
+
+/* Botão CTA (compartilhado dobras 1 e 2) */
+.ai-cta-btn {
+  display: block;
+  width: 18.125rem;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  text-align: center;
+  background-color: #ffd57f;
+  color: #000000;
+  font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 0.0625rem solid #c6932d;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.18);
+}
+
+/* Dobra 2 — Receitas exclusivas */
+.ai-section-product {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1.25rem 1.75rem;
+  gap: 0;
+}
+
+.ai-product-title {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  color: #3d1c08;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+
+.ai-product-title b {
+  font-weight: 700;
+}
+
+.ai-product-box-wrapper {
+  width: 16.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.ai-product-mockup {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: -2.75rem;
+  position: relative;
+  z-index: 2;
+  border: 0.1875rem solid #2b2b2b;
+}
+
+.ai-product-box {
+  width: 100%;
+  border: 0.125rem dashed #f5941f;
+  border-radius: 0.625rem;
+  padding: 3.5rem 0.875rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.ai-product-desc {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.ai-ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.ai-ingredient-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.ai-ingredient-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.ai-ingredient-item span {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 0.9375rem;
+  color: #333333;
+  line-height: 1.35;
+}
+
+.ai-ingredient-item span b {
+  font-weight: 700;
+}
+
+.ai-ingredient-item span i {
+  font-style: italic;
+  color: #555555;
+}
+
