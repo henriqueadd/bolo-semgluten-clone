@@ -767,9 +767,9 @@
 .section-author-bio {
   min-height: 27.8125rem;
   /* 445px */
-  background-image: url('../images/lara.avif');
+  background-image: url('../images/lara.jpg');
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: center;
   display: flex;
   align-items: flex-end;
   /* caixa de texto no rodapé da foto */
